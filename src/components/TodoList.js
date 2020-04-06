@@ -3,65 +3,67 @@
 import React, { Component } from "react";
 import Todo from "./Todo";
 
-class TodoList extends Component {
-    constructor(props) {
-        super(props);
+// class TodoList extends Component {
+//     constructor(props) {
+//         super(props);
 
-        this.state = {
-            items: []
-        };
+//         this.state = {
+//             items: []
+//         };
 
-        this.addItem = this.addItem.bind(this);
-        this.deleteItem = this.deleteItem.bind(this);
-    }
+//         this.addItem = this.addItem.bind(this);
+        // this.deleteItem = this.deleteItem.bind(this);
+    // }
 
-    addItem(e) {
-        if (this._inputElement.value !== "") {
-            var newItem = {
-                task: this._inputElement.value,
-                key:Date.now()
-            }
+    // addItem(e) {
+    //     if (this._inputElement.value !== "") {
+    //         var newItem = {
+    //             task: this._inputElement.value,
+    //             key:Date.now(),
+    //             completed: false
+    //         }
 
-            this.setState((prevState) => {
-                return {
-                    items:prevState.items.concat(newItem)
-                };
-            });
-        }
+    //         this.setState((prevState) => {
+    //             return {
+    //                 items:prevState.items.concat(newItem)
+    //             };
+    //         });
+    //     }
 
-        this._inputElement.value = "";
+    //     this._inputElement.value = "";
 
-        console.log(this.state.items);
+    //     console.log(this.state.items);
         
-        e.preventDefault();
-    }
+    //     e.preventDefault();
+    // }
 
-    deleteItem(key) {
-        var filteredItems = this.state.items.filter(function (item) {
-            return(item.key !== key)
-        })
+    // deleteItem(key) {
+    //     var filteredItems = this.state.items.filter(function (item) {
+    //         return(item.key !== key)
+    //     })
 
-        this.setState({
-            items: filteredItems
-        })
-    }
+    //     this.setState({
+    //         items: filteredItems
+    //     })
+    // }
 
-    render(){
-        return(
-        <div>
-            <div>
-                <form onSubmit={this.addItem}>
-                    <input ref={(a) => this._inputElement = a} 
-                            placeholder="enter task">
-                    </input>
-                    <button type="submit">Add</button>
-                </form>
-            </div>
-            <Todo entries={this.state.items}
-                delete={this.deleteItem}/>
-        </div>
-        )
-    };
-};
+    // render(){
+    //     return(
+    //     <div>
+    //         <div>
+    //             <form onSubmit={this.addItem}>
+    //                 <input ref={(a) => this._inputElement = a} 
+    //                         placeholder="enter task">
+    //                 </input>
+    //                 <button type="submit">Add</button>
+    //             </form>
+    //         </div>
+    //         <Todo entries={this.state.items}
+                // delete={this.deleteItem}
+//                 />
+//         </div>
+//         )
+//     };
+// };
 
 export default TodoList;
